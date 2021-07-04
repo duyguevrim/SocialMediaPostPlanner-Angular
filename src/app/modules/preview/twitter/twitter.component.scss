@@ -1,0 +1,80 @@
+.facebook-border{
+  border: 1px solid #d0d1d5;
+}
+.profile-image{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  float: left;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 35px;
+}
+.image-bigger-than-two {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: brightness(0.4);
+}
+.two-image:last-child{
+  padding-left: 0 !important;
+}
+.pre-line{
+  white-space: pre-line;
+}
+.image-cover{
+  object-fit: cover;
+}
+.og-title{
+  font-family: Georgia,lucida grande,tahoma,verdana,arial,sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #181C32 !important;
+}
+.og-description{
+  padding-top: .5rem;
+  line-height: 16px;
+  font-size: 12px;
+  font-weight: 400;
+}
+.og-link{
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 11px;
+  text-transform: uppercase;
+  color: #9197a3;
+  padding-top: 9px;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+::ng-deep mat-icon{
+  cursor: pointer !important;
+}
+.og-input{
+  display: block;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #3F4254;
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid #E4E6EF;
+  border-radius: 0.42rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.done-icon{
+  color: #9b9b9b;
+  cursor: pointer;
+}

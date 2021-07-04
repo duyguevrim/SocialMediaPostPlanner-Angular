@@ -1,0 +1,225 @@
+
+::ng-deep .mat-dialog-container {
+  background-color: white !important;
+  padding: 0 !important;
+}
+
+::ng-deep .mat-dialog-content {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  height: calc(100% - 113px) !important;
+  max-height: 100%;
+}
+
+::ng-deep .mat-dialog-title {
+  margin: 0 !important;
+}
+
+.post-title {
+  background: #f5f7f8;
+  line-height: 56px;
+  border-bottom: 1px solid #dfe3e9;
+  font-size: 1.275rem;
+  padding: 0 24px;
+  font-weight: 500;
+  color: #181C32;
+}
+
+.footer {
+  height: 56px;
+  display: flex;
+  padding: 0 24px;
+  overflow: hidden;
+  background: #f5f7f8;
+  border-top: 1px solid #dfe3e9;
+  color: #344563;
+}
+
+* {
+  color: #344563;
+  box-sizing: border-box !important;
+}
+
+.title {
+  font-size: 16px;
+}
+
+.post-content {
+  border-left: 1px solid #dfe3e9;
+  border-right: 1px solid #dfe3e9;
+}
+
+::ng-deep .mat-checkbox-inner-container {
+  border: 1px solid #344563;
+  border-radius: 3px;
+  margin: inherit !important;
+}
+
+::ng-deep .mat-checkbox-layout {
+  margin: inherit !important;
+}
+
+::ng-deep .mat-card {
+  background-color: white;
+  border-radius: 4px;
+}
+
+::ng-deep .mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: none !important;
+}
+
+.page-name {
+  letter-spacing: .3px;
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+::ng-deep .mat-checkbox-layout {
+  padding-top: .4rem !important;
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+
+
+}
+
+.message {
+  height: 80px !important;
+}
+
+::ng-deep .mat-input-element:focus {
+  caret-color: #1BC5BD !important;
+}
+
+::ng-deep .mat-checkbox-inner-container {
+  background-color: #EBEDF3;
+  height: 22px !important;
+  width: 22px !important;
+  border: none !important;
+}
+
+::ng-deep .mat-checkbox-checkmark-path {
+  stroke: white !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #1BC5BD;
+}
+
+.file-upload {
+  border: 1px dashed #8d98a9 !important;
+  background-color: #f5f7f8;
+  text-align: center;
+  border-radius: 8px;
+
+  & p {
+    margin-top: 4px;
+    margin-bottom: 24px;
+  }
+
+  & .select-file-button {
+    color: #68768c !important;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    height: 32px;
+    background-color: #fff;
+    border: 1px solid #dfe3e9;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  & .select-file-button:hover {
+    background-color: #f5f7f8;
+  }
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #dfe3e9;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: .5rem 0 !important;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+
+::ng-deep .mat-typography p {
+  margin: 0 0 0 0;
+}
+
+::ng-deep .mat-tab-labels div {
+  color: black !important;
+}
+
+.actions {
+  width: 80%;
+
+  & svg-icon {
+    margin: 0 !important;
+    background: transparent !important;
+    cursor: pointer;
+    border-radius: 0 !important;
+    border-bottom: 1px solid transparent;
+  }
+
+
+  & svg-icon:hover {
+    border-bottom: 1px solid #1BC5BD;
+    fill: #1BC5BD !important;
+  }
+
+}
+
+.preview-header {
+  //border-bottom: 2px solid;
+}
+
+.ng-hide {
+  visibility: hidden;
+}
+.date-picker{
+  height: calc(1.35em + 1.1rem + 2px);
+  padding: 0.55rem 0.75rem;
+  font-size: 0.925rem;
+  line-height: 1.35;
+  border-radius: 0.28rem;
+  display: inline-block;
+  width: auto;
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid #E4E6EF;
+}
+mat-card{
+  background-color: white;
+  cursor: pointer;
+  border-radius: 4px !important;
+  border: thin solid rgba(0,0,0,.12);
+
+}
+.between-border{
+  border-right: 1px solid #dfe3e9;
+}
+.notify-title{
+  color: #858fa1 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+.notify-value{
+  color: #344563 !important;
+  font-weight: bold;
+  font-size: 24px;
+}
+.item-top-info {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  height: 30px;
+  border-bottom: 1px solid #dfe3e9;
+  background: #f5f7f8 !important;
+}
+.image-preview img{
+  max-height: 100px !important;
+}

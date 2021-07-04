@@ -1,0 +1,61 @@
+<h2 class='post-title' mat-dialog-title style='margin: 0 !important;'>There are {{data.posts.length}} posts for {{data.date | date}}</h2>
+<div mat-dialog-content class='h-100 py-5'>
+  <table class='w-100'>
+    <thead>
+    <tr>
+      <th *ngFor='let header of tableHeaders'>
+        {{ header.toUpperCase() }}
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr height='70' *ngIf='data.posts?.length === 0'>
+      <td colspan='5' align='center' style='font-size: 20px'>No data found</td>
+    </tr>
+
+    <tr height='70' *ngFor='let post of data.posts'>
+      <td width='20%'>
+        <div class='d-flex align-items-center'>
+          <svg-icon [src]="'assets/icons/svg/' + getAccountById(post.account).provider + '.svg'"
+                    [svgStyle]="{'fill': getProviderColor(getAccountById(post.account).provider), 'padding.px':1}">
+          </svg-icon>
+
+          <div class='d-flex flex-column ml-2'>
+            <span>{{getAccountById(post.account).title}}</span>
+            <span class='secondary-color provider'>from {{ post.user.name }}</span>
+          </div>
+        </div>
+      </td>
+
+      <td class='pr-3'>{{trim(post.message, 150)}}</td>
+
+      <td width='15%'>
+        <div class='d-flex'>
+          <span class='mr-2' style='font-size:16px;' [class.pending]='!post.posted' [class.published]='post.posted'>&#9679;</span>
+          <span [class.pending]='!post.posted'
+                [class.published]='post.posted'>{{!post.posted ? 'pending' : 'published'}} </span>
+        </div>
+      </td>
+
+      <td width='15%'>{{ epochToString(post.date, 'dd MMM yyyy iii HH:mm') }}</td>
+
+      <td width='10%'>
+              <span class='material-icons action-icon mx-1' (click)='openUpdatePostDialog(post)'>
+                edit
+              </span>
+        <span class='material-icons action-icon mx-1' (click)='openDeleteDialog(post)'>
+                delete_forever
+              </span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <!--  <div class="h-100"> {{ events.length }}</div>-->
+</div>
+
+<mat-dialog-actions align='end' class='footer justify-content-end'>
+  <app-button [mat-dialog-close]='true' content='CLOSE' bgColor='rgb(201, 247, 245)'
+              textColor='rgb(27, 197, 189)'></app-button>
+
+</mat-dialog-actions>

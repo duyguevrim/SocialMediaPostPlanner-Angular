@@ -1,0 +1,25 @@
+<ng-container *ngIf='!data.success'>
+  <div class='d-flex justify-content-center align-items-center'>
+    <span class="material-icons mr-1" style='color: red; font-size: 3rem;'>
+      error
+    </span>
+  </div>
+  <h1 mat-dialog-title class='mt-2'>{{data.title}}</h1>
+  <div mat-dialog-content>{{data.description}}</div>
+  <div mat-dialog-actions class='mt-3'>
+    <button mat-button mat-dialog-close class='ml-auto'>Close</button>
+  </div>
+</ng-container>
+
+<ng-container *ngIf='data.success'>
+  <div class='d-flex justify-content-center align-items-center'>
+    <span class="material-icons mr-1" style='color: green; font-size: 3rem;'>
+      done
+    </span>
+  </div>
+  <h1 mat-dialog-title class='mt-2'>{{data.title}}</h1>
+  <div mat-dialog-content>{{data.description}}</div>
+  <div mat-dialog-actions class='mt-3'>
+    <button mat-button mat-dialog-close class='ml-auto'>Close and Continue</button>
+  </div>
+</ng-container>

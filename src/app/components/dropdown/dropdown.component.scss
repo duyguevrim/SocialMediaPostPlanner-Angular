@@ -1,0 +1,30 @@
+select {
+  border: 1px solid rgba(0, 0, 0, .3);
+  padding: 5px 0;
+  width: 100% !important;
+  appearance:none;
+}
+
+select {
+  background-image: url('/assets/icons/svg/arrow-down.svg');
+  background-repeat: no-repeat;
+  background-position-x: 93%;
+  background-position-y: .8rem;
+  border: 1px solid rgba(0, 0, 0, .1);
+  padding: .6rem .7rem;
+  background-size: 8px;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, .5);
+  font-weight: 500;
+
+}
+
+select:focus {
+  border: 1px solid #1BC5BD;
+}
+
+
+.optionItem {
+  background-color: rgba(0, 0, 0, .1);
+}
+

@@ -1,0 +1,98 @@
+<h2 class='post-title' mat-dialog-title>Post Report</h2>
+<div mat-dialog-content>
+  <div class='row h-100'>
+    <div class='col-6 py-3 preview'>
+      <div class='d-flex justify-content-between align-items-center preview-header'>
+        <h5 class='title m-0'>
+          Preview
+        </h5>
+      </div>
+      <p>
+      </p>
+      <div class='py-3 image-preview'>
+        <app-facebook [description]='data.message' [pageName]='data.data.title' [uploadUrls]='uploadUrls'
+                      [link]='data.link' [isFocusOut]='false' [isToggleFileUpload]='isToggleFileUpload'
+                      [isToggleLink]='isToggleLink'></app-facebook>
+      </div>
+
+      <div  *ngFor='let comment of data.comments'>
+        <mat-card class='p-0 mt-3 ml-5'>
+          <div class='d-flex align-items-center item-top-info p-0'>
+            <mat-icon>
+              comment
+            </mat-icon>
+            <span class='comment-title'>Comment</span>
+          </div>
+          <div>
+
+            <app-facebook [description]='comment.message' [pageName]='comment.from.name' [pageId]='comment.from.id' [uploadUrls]='[]' [commentTime]='comment.created_time'
+                          [link]='' [isFocusOut]='true' [isToggleFileUpload]='false'
+                          [isToggleLink]='false'
+                          ></app-facebook>
+          </div>
+        </mat-card>
+
+        <mat-card class='mt-3 ml-5'  *ngFor='let comment of data.subComments'>
+          <div class='d-flex align-items-center item-top-info p-3'>
+            <mat-icon>
+              comment
+            </mat-icon>
+            <span class='comment-title pl-2'>Comment</span>
+          </div>
+          <div>
+
+            <app-facebook [description]='comment.message' [pageName]='comment.from.name' [pageId]='comment.from.id' [uploadUrls]='[]' [commentTime]='comment.created_time'
+                          [link]='' [isFocusOut]='true' [isToggleFileUpload]='false'
+                          [isToggleLink]='false'
+            ></app-facebook>
+          </div>
+        </mat-card>
+      </div>
+
+    </div>
+    <div class='col-2 between-border'>
+
+    </div>
+    <div class='col-4 py-3'>
+      <div class='d-flex justify-content-between align-items-center preview-header'>
+        <h5 class='title m-0'>
+          Statistics
+        </h5>
+      </div>
+      <mat-card class='mt-3'>
+        <div class='d-flex flex-column align-items-start'>
+          <svg-icon [src]="'assets/icons/svg/love (1).svg'"
+                    [svgStyle]="{'width.px': 26}"
+          >
+          </svg-icon>
+          <div>
+            <span class='notify-title pt-2'>Total Likes</span>
+          </div>
+        </div>
+        <div class='d-flex justify-content-end align-items-end pt-3'>
+          <span class='notify-value'>{{data.totalLikes}}</span>
+        </div>
+      </mat-card>
+      <mat-card class='mt-3'>
+        <div class='d-flex flex-column align-items-start'>
+          <svg-icon [src]="'assets/icons/svg/comments.svg'"
+                    [svgStyle]="{'width.px': 26}"
+          >
+          </svg-icon>
+          <div>
+            <span class='notify-title pt-2'>Total Comments</span>
+          </div>
+        </div>
+        <div class='d-flex justify-content-end align-items-end pt-3'>
+          <span class='notify-value'>{{data.totalComments}}</span>
+        </div>
+      </mat-card>
+
+    </div>
+  </div>
+</div>
+<mat-dialog-actions class='footer justify-content-end '>
+  <app-button cdkFocusInitial [mat-dialog-close]='true' content='Close' bgColor='rgb(27, 197, 189)' textColor='white'
+              class='ml-2'></app-button>
+</mat-dialog-actions>
+

@@ -1,0 +1,12 @@
+<div class="wrapper d-flex" *ngIf='show'>
+  <div style="position: relative; width: 420px">
+    <app-sidebar style="position: fixed; top: 0; left: 0;"></app-sidebar>
+    <app-account-bar style="position: fixed; top: 0; left: 120px;"></app-account-bar>
+  </div>
+
+    <div class="px-3" style="width: calc(100vw - 420px)">
+      <app-breadcrumb></app-breadcrumb>
+      <router-outlet></router-outlet>
+    </div>
+
+</div>

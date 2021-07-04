@@ -1,0 +1,110 @@
+:host {
+  width: 100%;
+}
+
+.post-data-table {
+  background: #FFFFFF;
+  border-radius: 5px;
+  display: table;
+  font-size: .9rem
+}
+
+.filter-item {
+  padding: 5px 10px;
+  min-width: 50px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.active-filter-item {
+  background-color: #1BC5BD;
+  color: #FFF;
+  transition: background-color 300ms linear, color 100ms linear;
+}
+
+th {
+  text-align: left;
+  padding-bottom: 20px;
+  color: rgba(0, 0, 0, .5);
+  font-weight: 500;
+  font-size: .8rem;
+}
+
+table {
+  display: table;
+  border-collapse: collapse;
+}
+
+tr {
+  display: table-row;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+tbody tr:hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+tbody tr:last-child {
+  border-bottom: 0px;
+}
+
+
+td, th {
+  display: table-cell;
+}
+
+
+.pending {
+  color: #F64E60 !important;
+}
+
+.published {
+  color: #1BC5BD  !important;
+}
+
+button span {
+  font-size: 12px;
+}
+
+.provider {
+  font-size: .8rem;
+}
+
+.card-header {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.icon {
+  color: rgba(0, 0, 0, .2)
+}
+
+.input-field {
+  width: 150px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, .2)
+}
+
+.input-field:focus {
+  border: 1px solid #1BC5BD;
+}
+
+::ng-deep .mat-stroked-button	 {
+  background-color: #1BC5BD;
+  color: #FFFFFF;
+  cursor: pointer !important;
+}
+
+.action-icon {
+  color: #B5B5C3;
+  font-size: 1.2rem;
+  padding: .1rem;
+  cursor: pointer;
+}
+
+.action-icon:hover {
+  color: #1BC5BD;
+}

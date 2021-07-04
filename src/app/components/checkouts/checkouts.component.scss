@@ -1,0 +1,50 @@
+.card {
+  background: #FFFFFF;
+  border-radius: 5px;
+  display: table;
+  font-size: .9rem;
+}
+
+.card-header {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+table {
+  display: table;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding-bottom: 20px;
+  color: rgba(0, 0, 0, .5);
+  font-weight: 500;
+  font-size: .8rem;
+}
+
+tr {
+  display: table-row;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+tbody tr:hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+tbody tr:last-child {
+  border-bottom: 0px;
+}
+
+
+td, th {
+  display: table-cell;
+}
+
+.status {
+  background: #f1f1f1;
+  text-align: center;
+  border-radius: 2px;
+  border: 1px solid #ddd;
+  font-weight: 500;
+}

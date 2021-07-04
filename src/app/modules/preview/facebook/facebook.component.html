@@ -1,0 +1,100 @@
+<div class='facebook-border d-flex flex-column'>
+  <div class='d-flex align-items-center pl-3 pt-2'>
+    <div class='profile-image'>
+      {{getPageImgInfo(pageName)}}
+    </div>
+    <div class='d-flex flex-column ml-2'>
+      <span *ngIf='pageName'>{{pageName}}</span>
+      <div class='d-flex align-items-center'>
+        <span class='secondary-color'>Delayable paylaştı </span>
+        <span class='secondary-color ml-2'> {{ commentTime}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class='py-3 pl-3'>
+    <p class='pre-line'>
+      {{description}}
+    </p>
+  </div>
+
+  <div class='row m-0 p-0 pb-3' *ngIf='uploadUrls.length === 1'>
+    <div class='col-12 px-3' *ngFor='let file of uploadUrls; let f = index' [attr.data-index]='f'>
+      <img
+        class='w-100 cover'
+        [src]='file'
+      />
+    </div>
+  </div>
+  <div class='row m-0 p-0 pb-3' *ngIf='uploadUrls.length === 2'>
+    <div class='col-6 two-image px-3' *ngFor='let file of uploadUrls; let f = index' [attr.data-index]='f'>
+      <img
+        class='w-100 image-cover first-preview-image preview-image-border'
+        [src]='file'
+      />
+    </div>
+  </div>
+
+  <div class='row m-0 p-0 pb-3' *ngIf='uploadUrls.length > 2'>
+    <ng-container *ngFor='let file of uploadUrls; let f = index'>
+      <div class='col-8 p-0 pr-1 pl-3' *ngIf='f === 0'>
+        <img
+          class='w-100 image-cover h-100 preview-image-border'
+          [src]='file'
+        >
+      </div>
+    </ng-container>
+
+    <div class='col-4 p-0 pr-3'>
+      <div class='row m-0 p-0 '>
+        <ng-container *ngFor='let file of uploadUrls; let f = index'>
+          <div class='col-12 d-flex p-0 m-0 wrapper' *ngIf='f > 0 && f < 3'>
+            <img
+              [ngClass]="{'image-bigger-than-two' : uploadUrls.length > 3 && f == 2}"
+              class='w-100 image-cover preview-image-border'
+              style='height: 150px !important;'
+              [src]='file'
+            >
+            <div *ngIf='uploadUrls.length > 3 && f == 2' class='centered'>+ {{(uploadUrls.length - 3)}}</div>
+          </div>
+        </ng-container>
+
+      </div>
+    </div>
+  </div>
+  <div *ngIf='preview.url' class='d-flex flex-column p-3'>
+    <div [hidden]='!preview.image' class='facebook-border'>
+      <img class='w-100' [src]='preview.image'>
+    </div>
+    <div class='facebook-border p-3'>
+      <div [hidden]='!preview.title' class='og-title'>
+        <span *ngIf='!isOgTitleEdit'>{{preview.title}}</span>
+        <mat-icon *ngIf='!isOgTitleEdit' class='pl-2 pointer-event' (click)='isOgTitleEdit = true;'>edit</mat-icon>
+        <div appearance='outline' class='w-100 d-flex flex-column align-items-end' *ngIf='isOgTitleEdit'>
+          <input matInput class='og-input' [(ngModel)]='preview.title'>
+          <mat-icon (click)='isOgTitleEdit = false;'>done</mat-icon>
+        </div>
+      </div>
+      <div [hidden]='!preview.description' class='og-description'>
+        <span *ngIf='!isOgDescriptionEdit'>{{preview.description}}</span>
+        <mat-icon color='#1BC5BD' *ngIf='!isOgDescriptionEdit' class='pl-2 pointer-event' (click)='isOgDescriptionEdit = true;'>edit
+        </mat-icon>
+        <div appearance='outline' class='w-100 d-flex flex-column align-items-end' *ngIf='isOgDescriptionEdit'>
+          <input matInput class='og-input' [(ngModel)]='preview.description'>
+          <mat-icon (click)='isOgDescriptionEdit = false;' class='done-icon pt-1'>done</mat-icon>
+        </div>
+      </div>
+      <div [hidden]='!preview.url' class='og-link'>
+        <span>{{this.link}}</span>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div>
+
+
+  </div>
+
+</div>

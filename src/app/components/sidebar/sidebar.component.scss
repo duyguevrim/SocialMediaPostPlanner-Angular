@@ -1,0 +1,36 @@
+.side-bar {
+  height: 100vh;
+  background: #FFFFFF;
+  width: 120px;
+  border-right: 1px solid rgba(0, 0, 0, .1);
+  user-select: none;
+}
+
+.side-bar h1 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #000;
+  font-family: "Segoe UI";
+}
+
+.side-bar h1::first-letter {
+  font-weight: 600;
+  color: #1BC5BD;
+}
+
+.menu-item {
+  background: #EFF2F5;
+  padding: .7rem;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, .5);
+  cursor: pointer;
+}
+
+.menu-item:hover { color: #1BC5BD;}
+.tooltip { font-size: 1rem; }
+.trademark { bottom: 10px; }
+.active-url { color: #1BC5BD; }
+.rocket {
+  cursor: pointer;
+  transform: rotate(-30deg);
+}

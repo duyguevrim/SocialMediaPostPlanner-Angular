@@ -1,0 +1,46 @@
+* {
+  color: black !important;
+}
+mat-card{
+  background-color: white;
+  height: 100px;
+  width: 130px;
+  cursor: pointer;
+  border-radius: 4px !important;
+  border: thin solid rgba(0,0,0,.12);
+  padding: 20px!important;
+
+}
+.add-account{
+  height: 90% !important;
+  width: 100% !important;
+}
+.add-account-image{
+  width: 450px;
+  height: 350px;
+}
+h1{
+  font-size: 2.7rem;
+  font-weight: 500;
+}
+span{
+  font-size: 1rem;
+}
+img {
+  width: 100%;
+}
+
+.item {
+  user-select: none;
+  cursor: pointer;
+}
+mat-card:hover {
+  border: 1px solid #1dc5bd;
+}
+.h-100{
+  height: 100% !important;
+}
+
+.material-icons {
+  cursor: pointer;
+}

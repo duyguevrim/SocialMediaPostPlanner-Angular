@@ -1,0 +1,33 @@
+
+<mat-list class='account-bar py-5 '>
+  <div mat-subheader>Accounts</div>
+  <div mat-subheader class='sub-2'>Adding pages is done through Facebook interface.</div>
+  <mat-selection-list #accounts_selector [multiple]='false' (selectionChange)='navigateTo($event)'>
+    <div *ngIf='accounts.length < 1' routerLink='/dashboard/add-account'
+         class='d-flex align-items-center justify-content-center w-100 account py-2 d-flex align-items-center'>
+      <app-button content='ADD NEW ACCOUNT' bgColor='rgb(201, 247, 245)'></app-button>
+    </div>
+
+
+    <mat-list-option *ngFor='let account of accounts' [value]='account'>
+      <div class='account py-2 d-flex justify-content-between align-items-center'>
+        <ng-container *ngIf='account'>
+          <div class='d-flex'>
+            <svg-icon [src]="'assets/icons/svg/' + account.provider + '.svg'"
+                      [svgStyle]="{'width.px': 40, 'fill': getProviderColor(account.provider), 'padding.px':1, 'margin.px':3}">
+            </svg-icon>
+            <div>
+              <div mat-line>{{ account.title }}</div>
+              <div mat-line>{{ user.email }}</div>
+            </div>
+          </div>
+          <div><span class='material-icons action-icon mx-1' (click)='deleteAccount(account.account_key)'>
+            delete_forever
+          </span></div>
+        </ng-container>
+      </div>
+
+    </mat-list-option>
+  </mat-selection-list>
+
+</mat-list>

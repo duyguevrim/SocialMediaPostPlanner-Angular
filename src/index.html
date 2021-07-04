@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Delayable - Social App Management</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="mat-typography">
+  <app-root></app-root>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '431566724493665',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v8.0'
+      });
+    };
+  </script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+<!--  <script type="text/javascript" src="https://platform.linkedin.com/in.js">-->
+<!--    api_key: 77p5a2vow3o39j-->
+<!--    onLoad: srem6MejyRQtyQ5O-->
+<!--    authorize: true-->
+<!--  </script>-->
+
+</body>
+</html>

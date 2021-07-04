@@ -1,0 +1,56 @@
+
+.top-content-img {
+  height: 160px;
+  object-fit: scale-down;
+  position: relative;
+  background-color: #d6dae0;
+  background-position: 50%;
+  color: #858fa1;
+  margin-bottom: 7px;
+}
+
+::ng-deep .top-content-card {
+  margin-bottom: 16px;
+  width: 100%;
+  height: auto;
+  background-color: #fff !important;
+  transition: none;
+  border-radius: 20px !important;
+  display: flex;
+  flex: 1 1 30%;
+  min-width: 265px;
+  margin: 0 8px;
+}
+.mat-list-item-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 16px;
+  position: relative;
+  height: inherit;
+}
+
+.mat-list-item{
+  border-bottom: 1px solid #f5f5f7;
+}
+.mat-list-item:last-child{
+  border-bottom: none;
+}
+
+::ng-deep .mat-card {
+  box-shadow: none !important;
+}
+
+::ng-deep .mat-list-item-content{
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.notify-title{
+  color: #858fa1 !important;
+  font-size: 16px !important;
+}
+.result-text{
+  color: #344563 !important;
+}

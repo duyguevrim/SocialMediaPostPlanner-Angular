@@ -1,0 +1,45 @@
+<section class='login'>
+  <div class='container-fluid m-0 p-0'>
+    <div class='row m-0 p-0'>
+      <div class='col-4 m-0 p-0 d-flex flex-column text-center justify-content-center'>
+        <h1 class='pt-5 m-0'>Delayable</h1>
+        <p class='desc mt-3 mb-5'>Social media publishing management tool.</p>
+        <img src='assets/images/login.png' class='w-100 mt-5' alt=''>
+      </div>
+      <div class='col-8 m-0 p-0 d-flex justify-content-center align-items-center'>
+        <form [formGroup]='registerForm' class='LoginForm' (submit)='onRegister()'>
+          <h3 class='text-center'>REGISTER</h3>
+          <p class='text-center'>Have an account <a routerLink='/login'>login</a></p>
+          <p class='mb-0'>
+            <mat-form-field appearance='legacy' class='w-100'>
+              <mat-label>Name</mat-label>
+              <input class='mt-2' matInput placeholder='Ex: John Doe' formControlName='name'>
+            </mat-form-field>
+          </p>
+          <p class='my-0 color-warning' *ngIf='name.invalid && name.touched'>Name is required!</p>
+          <p class='mb-0'>
+            <mat-form-field appearance='legacy' class='w-100'>
+              <mat-label>E-Mail</mat-label>
+              <input class='mt-2' matInput placeholder='Ex: johndoe@delayable.com' formControlName='email'>
+            </mat-form-field>
+          </p>
+          <p class='my-0 color-warning' *ngIf='email.invalid && email.touched'>Please type a valid e-mail address!</p>
+          <p>
+            <mat-form-field appearance='legacy' class='w-100'>
+              <mat-label>Password</mat-label>
+              <input class='mt-2' matInput placeholder='Parola' formControlName='password' type='password'>
+            </mat-form-field>
+          </p>
+          <p class='my-0 color-warning' *ngIf='password.errors?.required && (password.dirty || password.touched)'>Password is required!</p>
+          <button mat-raised-button class='mt-2 w-100'>REGISTER</button>
+          <div class='text-center w-100 mt-3 d-flex align-items-center justify-content-center'>
+            <p class='mb-0'>or register via:</p>
+            <span (click)='facebook_login()' class='material-icons ml-2' style='color: #3b5998'>
+              facebook
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

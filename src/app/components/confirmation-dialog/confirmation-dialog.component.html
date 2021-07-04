@@ -1,0 +1,33 @@
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmation Operation</h5>
+      </div>
+      <div class="modal-body">
+        This post will be publish from <b>{{user.username}}</b> to these accounts
+        on <b> {{ publishTime }} </b>.
+        <ul id="pt-1">
+          <li *ngFor="let account of data.accounts" class="pt-1 d-flex align-items-center">
+
+            <svg-icon [src]="'assets/icons/svg/' + getProviderIcon(account.provider) + '.svg'"
+                      [svgStyle]="{'width.px': 16, 'fill': getProviderColor(account.provider), 'padding.px':1, 'margin.px':3}"
+                      class="d-flex align-items-center ml-3 p-2">
+            </svg-icon>
+            {{account.title}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div>
+    <mat-dialog-actions class="footer justify-content-end pr-2">
+
+      <app-button [mat-dialog-close]="true" cdkFocusInitial content="Cancel" bgColor="rgb(201, 247, 245)"
+                  textColor="rgb(27, 197, 189)"></app-button>
+      <app-button cdkFocusInitial content={{data.buttonContent}} (click)="data.buttonContent === 'Update' ? updatePost() : publishPost() " bgColor="rgb(27, 197, 189)" textColor="white"
+                  class="ml-2"></app-button>
+    </mat-dialog-actions>
+  </div>
+
+</div>

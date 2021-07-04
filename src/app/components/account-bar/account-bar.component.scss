@@ -1,0 +1,43 @@
+.account-bar {
+  background: #FFFFFF;
+  height: 100vh;
+  width: 300px;
+  border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+.account-bar > span {
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 1);
+}
+
+.mat-line {
+  color: rgba(0, 0, 0, .6)
+}
+.mat-subheader {
+  color: rgba(0, 0, 0, .5);
+  font-size: 1.2rem;
+}
+
+.sub-2 {
+  color: rgba(0, 0, 0, .4);
+  font-size: .8rem;
+}
+
+.account {
+  border-radius: 5px;
+}
+
+.post-list-head {
+  color: rgba(0,0,0,.2) !important;
+}
+
+.action-icon {
+  color: #B5B5C3;
+  font-size: 1.4rem;
+  padding: .1rem;
+  cursor: pointer;
+}
+
+.action-icon:hover {
+  color: #1BC5BD;
+}

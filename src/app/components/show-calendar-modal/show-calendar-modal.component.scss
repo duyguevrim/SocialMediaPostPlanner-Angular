@@ -1,0 +1,98 @@
+::ng-deep mat-dialog-container {
+  background-color: white !important;
+  padding: 0 !important;
+}
+
+::ng-deep .mat-dialog-content {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  height: calc(100% - 113px) !important;
+  max-height: 100%;
+}
+
+.post-title {
+  background: #f5f7f8;
+  line-height: 56px;
+  border-bottom: 1px solid #dfe3e9;
+  font-size: 1.275rem;
+  padding: 0 24px;
+  font-weight: 400 !important;
+  color: #181C32;
+}
+
+.footer {
+  height: 56px;
+  display: flex;
+  padding: 0 24px;
+  overflow: hidden;
+  background: #f5f7f8;
+  border-top: 1px solid #dfe3e9;
+  color: #344563;
+}
+
+* {
+  color: #344563;
+  box-sizing: border-box !important;
+}
+
+th {
+  text-align: left;
+  padding-bottom: 20px;
+  color: rgba(0, 0, 0, .5);
+  font-weight: 500;
+  font-size: .8rem;
+}
+
+table {
+  display: table;
+  border-collapse: collapse;
+  overflow: auto;
+}
+
+tr {
+  display: table-row;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+tbody tr:hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+tbody tr:last-child {
+  border-bottom: 0px;
+}
+
+
+td, th {
+  display: table-cell;
+}
+
+
+.pending {
+  color: #F64E60 !important;
+}
+
+.published {
+  color: #1BC5BD  !important;
+}
+
+button span {
+  font-size: 12px;
+}
+
+.provider {
+  font-size: .8rem;
+}
+
+.action-icon {
+  color: #B5B5C3;
+  font-size: 1.2rem;
+  padding: .1rem;
+  cursor: pointer;
+}
+
+.action-icon:hover {
+  color: #1BC5BD;
+}
+

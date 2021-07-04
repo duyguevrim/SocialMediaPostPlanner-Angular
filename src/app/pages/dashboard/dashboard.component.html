@@ -1,0 +1,31 @@
+<div class="d-flex flex-column">
+  <div class='d-flex justify-content-center'>
+    <app-report-card reportContent='Total Posts' iconColor='rgb(120, 177, 232)' iconBgSubColor='rgb(120, 177, 232)'
+                     iconBg='rgb(239, 245, 252)' iconTitle='near_me' reportResult='{{totalPostLength}}'></app-report-card>
+    <app-report-card class='mx-5' reportContent='Total Accounts' iconColor='rgb(255, 126, 70)' iconBgSubColor='rgb(255, 126, 70)'
+                     iconBg='rgb(255, 239, 233)' iconTitle='groups' reportResult='{{accountsLength}}'></app-report-card>
+    <app-report-card reportContent='Plan Name' iconColor='#966fd6' iconBgSubColor='rgb(255, 126, 70)'
+                     iconBg='rgb(255, 239, 233)' iconTitle='star' reportResult='{{userPlan}}'></app-report-card>
+  </div>
+
+  <div class='row m-0 p-0 my-3'>
+    <div class='col-7 p-0'>
+      <div class='card d-flex flex-column px-4'>
+        <div class='d-flex justify-content-between align-items-center card-header py-4'>
+          <div class='head'>
+            <h2 class='mb-1'>Weekly Posts Chart</h2>
+            <span class='secondary-color'>This chart shows this week's posts</span>
+          </div>
+        </div>
+        <app-line-chart></app-line-chart>
+      </div>
+    </div>
+
+    <div class='col-5 p-0 m-0 pl-3'>
+      <app-checkouts></app-checkouts>
+    </div>
+  </div>
+
+  <app-last-posts class='mt-3'></app-last-posts>
+
+</div>

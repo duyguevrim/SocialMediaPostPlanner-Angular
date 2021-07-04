@@ -1,0 +1,39 @@
+h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #000000;
+  font-family: "Segoe UI";
+}
+
+h1::first-letter {
+  font-weight: 600;
+  color: #1BC5BD;
+}
+
+.desc {
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: #7e8299 !important;
+}
+
+.login {
+
+  & .col-4 {
+    height: 100vh;
+  }
+
+  & .col-8 {
+    height: 100vh;
+    background-color: #e4e6ef;
+  }
+
+  & form {
+    //max-width: 500px;
+    width: 500px;
+  }
+
+  & button {
+    background-color: #1BC5BD !important;
+    color: #FFFFFF !important;
+  }
+}

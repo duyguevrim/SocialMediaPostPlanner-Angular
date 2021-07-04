@@ -1,0 +1,22 @@
+<div class='row py-5'>
+  <div class='col-2 px-1 d-flex flex-column'>
+    <span class='secondary-color fw-bold mb-1'>Status:</span>
+    <app-dropdown (change)='selectStatues($event)' [items]='statuses' class='w-100'></app-dropdown>
+  </div>
+  <div class='col-2 px-1 d-flex flex-column'>
+    <span class='secondary-color fw-bold mb-1'>Account:</span>
+    <app-dropdown
+      (change)='selectAccount($event)'
+      [items]='accounts'
+      class='w-100'
+    ></app-dropdown>
+  </div>
+
+  <div class='col-3 px-1 d-flex align-self-end'>
+    <app-button
+      (click)='search()'
+      content='Search'
+      textColor='white'
+      bgColor='#1BC5BD'></app-button>
+  </div>
+</div>

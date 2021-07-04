@@ -1,0 +1,16 @@
+<div>
+  <!-- Loading spinner -->
+  <div *ngIf="loading" class="loading-container d-flex align-items-center justify-content-center">
+<!--    <mat-progress-spinner-->
+<!--      color="accent"-->
+<!--      mode="indeterminate">-->
+<!--    </mat-progress-spinner>-->
+
+    <div class="spinner">
+      <div class="cube1"></div>
+      <div class="cube2"></div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

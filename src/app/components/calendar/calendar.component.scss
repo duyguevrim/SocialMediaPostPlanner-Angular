@@ -1,0 +1,29 @@
+h3 {
+  margin: 0 0 10px;
+}
+
+pre {
+  background-color: #f5f5f5;
+  padding: 15px;
+}
+.calendar-title{
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 0.75rem;
+}
+.calendar-button{
+  border: 1px solid #EBEDF3;
+  padding: .2rem .5rem;
+  display: flex;
+  align-items: center;
+  color: #B5B5C3;
+}
+::ng-deep .cal-month-view .cal-day-badge {
+  background-color: rgb(201, 247, 245);
+  color: rgb(27, 197, 189);
+  font-size: 14px;
+}
+::ng-deep mwl-calendar-month-cell{
+  cursor: pointer;
+}

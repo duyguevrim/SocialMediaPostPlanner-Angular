@@ -1,0 +1,81 @@
+.wrapper {
+  height: 90%;;
+}
+
+.card {
+  background: #FFFFFF;
+  border-radius: 5px;
+  font-size: .9rem;
+  width: 320px;
+  min-height: 500px;
+}
+
+.card2 {
+  background: #FFFFFF;
+  border-radius: 5px;
+  font-size: .9rem;
+  width: 700px;
+  min-height: 513px;
+}
+
+.card-header {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+.tooltip {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: .8rem 0;
+  margin: .3rem 0;
+  border-radius: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  font-size: 1rem;
+}
+
+li span {
+  float: right;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.plan{
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
+}
+
+span.switch {
+  color: #1BC5BD;
+  cursor: pointer;
+}
+
+.profile-color {
+  fill: #1BC5BD;
+}
+
+table {
+  font-size: 1rem;
+}
+
+tr {
+  margin: 0rem 1rem;
+}
+
+input {
+  width: 100%;
+  padding: .5rem;
+  border: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+}
+
+input:focus {
+  border-bottom: 1px solid #1BC5BD;
+  transition:all .2s ease-in-out;
+}

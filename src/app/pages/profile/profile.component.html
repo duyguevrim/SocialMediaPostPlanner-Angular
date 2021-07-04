@@ -1,0 +1,97 @@
+<div class='d-flex justify-content-center m-0 p-0 align-items-center wrapper' *ngIf='user'>
+  <div class='card d-flex flex-column px-4'>
+    <div class='card-header d-flex justify-content-between align-items-center py-4'>
+      <div class='head d-flex align-items-center'>
+        <div
+          [matTooltip]="user.plan.name + ' Plan'"
+          matTooltipClass='tooltip'
+          matTooltipPosition='below'
+        >
+          <svg-icon src='assets/icons/svg/badge.svg'
+                    [svgStyle]="{'width.px': 40, 'height.px': 40, 'fill': planColor(user.plan.name)}">
+          </svg-icon>
+        </div>
+
+        <div class='ml-2 d-flex flex-column'>
+          <h2 class='m-0'>{{user.name}}</h2>
+          <span class='secondary-color'>{{user.email}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class='py-4'>
+      <ul class='p-0 m-0 secondary-color'>
+        <li>Plan: <span [style]="'color:' + planColor(user.plan.name)">{{user.plan.name}}</span></li>
+        <li>Active Accounts: <span>{{getAccountsLength(user.plan.name)}}</span></li>
+        <li>Published Posts: <span>{{publishedPostsLength}}</span></li>
+        <li>Pending Posts: <span>{{pendingPostsLength}}</span></li>
+        <li>Total Posts: <span>{{getPostsLength(user.plan.name)}}</span></li>
+      </ul>
+
+      <div class='plan mt-5' *ngIf='user.plan.name !== "Pro"'>
+        <span class='switch' (click)='checkout()'>SWITCH TO PRO VERSION <br />  <br /> 25 TL</span>
+      </div>
+    </div>
+  </div>
+
+  <div class='card2 ml-3 px-4'>
+    <div class=' py-4 d-flex align-items-center'>
+      <mat-icon style='fill: #1BC5BD;' aria-hidden='true'>face</mat-icon>
+      <h2 class='m-0 p-0 ml-3'>Profile Information</h2>
+    </div>
+
+    <div class='py-4'>
+      <form [formGroup]='profileForm' (submit)='updateProfile()'>
+        <table class='w-100 secondary-color'>
+          <td>
+            <tr height='70'>
+              <td>Email:</td>
+              <td>{{user.email}}</td>
+            </tr>
+            <tr height='70'>
+              <td width='15%'>Name:</td>
+              <td><input formControlName='name' autofocus></td>
+            </tr>
+            <tr height='70'>
+              <td>Surname:</td>
+              <td><input formControlName='surname' /></td>
+            </tr>
+            <tr height='70'>
+              <td>Phone:</td>
+              <td><input formControlName='gsmNumber' /></td>
+            </tr>
+          </td>
+
+          <td>
+            <tr height='70'>
+              <td>City:</td>
+              <td><input formControlName='city' /></td>
+            </tr>
+
+            <tr height='70'>
+              <td>Country:</td>
+              <td><input formControlName='country' /></td>
+            </tr>
+            <tr height='70'>
+              <td>Zipcode:</td>
+              <td><input formControlName='zipcode' /></td>
+            </tr>
+
+            <tr height='70'>
+              <td>Adress:</td>
+              <td><input formControlName='adress' /></td>
+            </tr>
+          </td>
+
+          <tr>
+            <td></td>
+            <td align='right'>
+              <app-button content='Update' bgColor='rgb(27, 197, 189)' textColor='white' class='ml-2'></app-button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+</div>

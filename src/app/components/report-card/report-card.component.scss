@@ -1,0 +1,16 @@
+.main-data {
+  font-size: 28px;
+  font-weight: 600;
+  color: #344563;
+}
+.report-content {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  font-weight: 500;
+}
+::ng-deep .mat-card-header-text{
+  margin : 0 !important;
+}
+::ng-deep .mat-typography p {
+  margin: 0 0 0 0;
+}

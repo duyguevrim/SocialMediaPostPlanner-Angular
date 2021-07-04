@@ -1,0 +1,48 @@
+
+<div class="d-flex justify-content-between align-items-center">
+  <div class="d-flex">
+      <div
+        class="calendar-button"
+        mwlCalendarPreviousView
+        [view]="view"
+        [(viewDate)]="viewDate"
+      >
+       <mat-icon>keyboard_arrow_left</mat-icon>
+      </div>
+      <div
+        class="calendar-button"
+        mwlCalendarToday
+        [(viewDate)]="viewDate"
+      >
+        today
+      </div>
+      <div
+        class="calendar-button"
+        mwlCalendarNextView
+        [view]="view"
+        [(viewDate)]="viewDate"
+      >
+        <mat-icon>keyboard_arrow_right</mat-icon>
+
+      </div>
+  </div>
+  <div >
+    <h3 class="calendar-title">{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+  </div>
+
+</div>
+<br />
+<div [ngSwitch]="view">
+  <mwl-calendar-month-view
+    *ngSwitchCase="CalendarView.Month"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    (dayClicked)="dayClicked($event.day)"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)"
+  >
+  </mwl-calendar-month-view>
+</div>
+
+

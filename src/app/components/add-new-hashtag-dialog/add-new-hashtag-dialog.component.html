@@ -1,0 +1,17 @@
+<div class="p-5">
+  <h3>Add New Hashtag</h3>
+    <form [formGroup]="hashTagForm" (ngSubmit)="onSubmit()" class="d-flex flex-column justify-content-center align-content-center">
+      <label>Name</label>
+      <input type="text" formControlName="name" placeholder="Ex. Birthday Message" />
+      <label>Content</label>
+      <input type="text" formControlName="content" placeholder="Ex. My dear, this is my birtday. I grow up with u :)" />
+
+      <div class="d-flex justify-content-end align-content-center mt-3">
+        <app-button [mat-dialog-close]='true' cdkFocusInitial type="button" content='CANCEL' bgColor='rgb(201, 247, 245)'
+                    textColor='rgb(27, 197, 189)'></app-button>
+        <app-button [mat-dialog-close]='true' cdkFocusInitial content='POST' type="submit" bgColor='rgb(27, 197, 189)'
+                    textColor='white'
+                    class='ml-2'></app-button>
+      </div>
+    </form>
+</div>

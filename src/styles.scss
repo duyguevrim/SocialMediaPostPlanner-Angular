@@ -1,0 +1,69 @@
+@import '../node_modules/normalize.css/normalize.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap-grid.min.css';
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box !important;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.text-center {
+  text-align: center;
+}
+
+*:focus {
+  outline: 0;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.secondary-color {
+  color: rgba(0, 0, 0, .5);
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+.fw-bold {
+  font-weight: 500 !important;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.third-color {
+  color: #3F4254 !important
+}
+
+.color-warning {
+  color: red;
+}
+
+.pointer{
+  cursor: pointer;
+}

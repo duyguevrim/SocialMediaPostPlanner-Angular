@@ -1,0 +1,192 @@
+<h2 class='post-title' mat-dialog-title>Publish a New Post</h2>
+<div mat-dialog-content>
+  <div class='row h-100'>
+    <div class='col-3 py-4'>
+      <h5 class='title' *ngIf='data===null || data.isTotal'>
+        Select profile(s)
+      </h5>
+      <h5 class='title' *ngIf='data!==null && !data.isTotal'>
+        Selected profile
+      </h5>
+      <section class='d-flex flex-column justify-content-around' *ngIf='data === null || data.isTotal'>
+        <mat-checkbox *ngFor='let account of accounts' (change)='getSelectedAccounts($event)' [value]='account'
+                      class='my-1'>
+
+          <div class='d-flex align-items-center'>
+            <svg-icon [src]="'assets/icons/svg/' + getProviderIcon(account.provider) + '.svg'"
+                      [svgStyle]="{'width.px': 20, 'fill': getProviderColor(account.provider), 'padding.px':1, 'margin.px':3}"
+                      class='d-flex align-items-center ml-3 p-2'>
+            </svg-icon>
+            <p class='page-name third-color m-0 ml-3'>{{account.title}}</p>
+          </div>
+        </mat-checkbox>
+      </section>
+      <section class='d-flex flex-column justify-content-around' *ngIf='data!==null && !data.isTotal'>
+        <div class='d-flex align-items-center'>
+          <svg-icon [src]="'assets/icons/svg/' + (data.account.provider)+ '.svg'"
+                    [svgStyle]="{'width.px': 20, 'fill': getProviderColor(data.account.provider), 'padding.px':1, 'margin.px':3}"
+                    class='d-flex align-items-center ml-3 p-2'>
+          </svg-icon>
+          <p class='page-name third-color m-0 ml-3'>{{data.account.title}}</p>
+        </div>
+      </section>
+    </div>
+    <div class='col-4 post-content py-4'>
+      <div class='d-flex align-items-center justify-content-between'>
+        <h5 class='title'>
+          Your Post
+        </h5>
+
+        <div class='d-flex align-items-center'>
+
+          <div *ngFor='let provider of selectedProviders' class='d-flex align-items-center pl-2'>
+            <svg-icon [src]="'assets/icons/svg/' + (provider)+ '.svg'"
+                      [svgStyle]="{'width.px': 20, 'fill': getProviderColor(provider)}"
+                      class='m-0 p-0'>
+            </svg-icon>
+            <span class='pl-2'>{{providerCharacterLimit(provider) - description.length}}</span>
+          </div>
+        </div>
+      </div>
+      <mat-card>
+        <mat-form-field class='w-100'>
+          <mat-label>Leave a comment</mat-label>
+          <textarea class='message' matInput placeholder='Write your content...' [(ngModel)]='description'
+                    (ngModelChange)='changeInputText($event)'></textarea>
+        </mat-form-field>
+        <div class='d-flex justify-content-between align-items-center'>
+              <svg-icon src='assets/icons/svg/hashtag.svg'
+                        class='actions m-0 p-0 '
+                        [svgStyle]="{'width.px': 20}"
+                        [style.fill]="isToggleHashTag ? '#1BC5BD' : '#000000'"
+                        (click)='isToggleHashTag = !isToggleHashTag'>
+              </svg-icon>
+
+          <div class='d-flex align-items-center'>
+            <svg-icon src='assets/icons/svg/camera.svg'
+                      class='actions m-0 p-0 '
+                      [svgStyle]="{'width.px': 20}"
+                      [style.fill]="isToggleFileUpload ? '#1BC5BD' : '#000000'"
+                      (click)='openFileUploadMenu();'>
+            </svg-icon>
+            <svg-icon src='assets/icons/svg/attachment.svg'
+                      class='actions ml-2 '
+                      [style.fill]="isToggleLink ? '#1BC5BD' : '#000000'"
+                      [svgStyle]="{'width.px': 20}" (click)='openLinkUploadMenu();'>
+            </svg-icon>
+          </div>
+        </div>
+      </mat-card>
+
+      <div class='px-3'>
+        <div class='px-3 py-1 hashtags' *ngIf='isToggleHashTag'>
+          <div class='d-flex justify-content-between hashtags-title mb-1 '>
+            <h4 class='m-0 p-0 '>hashtags</h4>
+            <div (click)='addNewHashTagClick()'>
+              <mat-icon>add</mat-icon>
+            </div>
+          </div>
+          <div class='hashtag-item pointer py-1'*ngFor='let hashtag of hashtags' (click)='hashTagItemClick(hashtag)'>
+            <div class='px-1 d-flex align-items-center justify-content-between'>
+              <div>
+                <b>{{hashtag.name}}</b>
+                <span class='pl-3'>{{ trim(hashtag.content, 18)}}</span>
+              </div>
+
+              <div class="d-flex">
+
+              <!-- Stop Propagation nested eventlar çalışmasın diye -->
+              <div class='icon d-flex align-items-center justify-content-center px-2 py-1'
+                   (click)='hashTagItemUpdateClick(hashtag); $event.stopPropagation()'>
+                <mat-icon>edit</mat-icon>
+              </div>
+
+              <div class='icon d-flex align-items-center justify-content-center px-2 py-1'
+                   (click)='hashTagItemDeleteClick(hashtag); $event.stopPropagation()'>
+                <mat-icon>delete</mat-icon>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <mat-card *ngIf='isToggleFileUpload'>
+        <div class='p-3 file-upload'>
+          <mat-icon>
+            camera
+          </mat-icon>
+          <p class='p-0'>
+            Drag images here
+          </p>
+          <label class='select-file-button pa-0 d-flex justify-content-center align-items-center'>
+            <span>
+              Choose images to upload
+            </span>
+            <input class='d-none' type='file' multiple accept='images/*' (change)='onSelectFile($event)' />
+          </label>
+        </div>
+      </mat-card>
+
+      <mat-card *ngIf='isToggleLink'>
+        <div class='link-upload'>
+          <p>
+            Link URL
+          </p>
+          <mat-form-field appearance='outline' class='w-100'>
+            <input matInput placeholder='Placeholder' [(ngModel)]='link' (focusin)='isFocusOut = false;'
+                   (focusout)='this.isFocusOut = true;' pattern='(https?://)?([\da-z.-]+)\.([a-z.]{2,6})[/\w .]*/?'>
+          </mat-form-field>
+        </div>
+      </mat-card>
+      <div class='p-3'>
+        <h4 class='m-0 pt-3'> Choose a Post Date</h4>
+        <input class='date-picker' [(ngModel)]='publishTime' [owlDateTimeTrigger]='dt' [owlDateTime]='dt'>
+        <owl-date-time #dt></owl-date-time>
+      </div>
+    </div>
+    <div class='col-5 py-4'>
+      <div class='d-flex justify-content-between align-items-center preview-header'>
+        <h5 class='title m-0'>
+          Preview
+        </h5>
+        <div class='actions d-flex justify-content-end'>
+          <svg-icon [src]="'assets/icons/svg/facebook-letter.svg'"
+                    [svgStyle]="{'width.px': 20}"
+                    class='d-flex align-items-center px-3 py-2'
+                    (click)='isFacebookPreview=true; isLinkedinPreview=false; isTwitterPreview=false;'
+                    [style.fill]="isFacebookPreview ? '#1BC5BD' : 'black'">
+          </svg-icon>
+
+          <svg-icon [src]="'assets/icons/svg/twitter-bird.svg'"
+                    [svgStyle]="{'width.px': 20}"
+                    (click)='isTwitterPreview = true; isLinkedinPreview=false; isFacebookPreview=false;'
+                    class='d-flex align-items-center px-3 py-2'>
+          </svg-icon>
+
+          <svg-icon [src]="'assets/icons/svg/linkedin-letter.svg'"
+                    [svgStyle]="{'width.px': 20}"
+                    class='d-flex align-items-center px-3 py-2'
+                    (click)='isLinkedinPreview=true; isFacebookPreview=false; isTwitterPreview=false;'
+                    [style.fill]="isLinkedinPreview ? '#1BC5BD' : 'black'">
+            >
+          </svg-icon>
+        </div>
+      </div>
+      <div class='py-3'>
+        <app-facebook *ngIf='isFacebookPreview' [description]='description' [uploadUrls]='uploadUrls'
+                      [link]='link' pageName="TestPage" [isFocusOut]='isFocusOut' [isToggleLink]='isToggleLink'></app-facebook>
+        <app-facebook *ngIf='isTwitterPreview' pageName="TestPage" [description]='description' [uploadUrls]='uploadUrls'
+                      [link]='link' [isFocusOut]='isFocusOut'></app-facebook>
+      </div>
+    </div>
+  </div>
+</div>
+<mat-dialog-actions class='footer justify-content-end '>
+    <app-button [mat-dialog-close]='true' cdkFocusInitial content='CANCEL' bgColor='rgb(201, 247, 245)'
+              textColor='rgb(27, 197, 189)'></app-button>
+  <app-button cdkFocusInitial content='POST' (click)='publishPost(publishTime)' bgColor='rgb(27, 197, 189)'
+              textColor='white'
+              class='ml-2'></app-button>
+</mat-dialog-actions>
+

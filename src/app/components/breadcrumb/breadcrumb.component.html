@@ -1,0 +1,8 @@
+<div class="breadcrumb py-3 secondary-color d-flex align-items-center">
+  <mat-icon class="m-0 p-0">roofing</mat-icon>
+  <div *ngFor="let bcElement of bcLoadedData; let last = last">
+    {{ bcElement.breadcrumb === 'Dashboard' ? '' : bcElement.breadcrumb }}
+    <span class="breadcrumb-separator"
+          *ngIf="!last">/</span>
+  </div>
+</div>
